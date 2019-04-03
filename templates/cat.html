@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Кодировка веб-страницы -->
+    <meta charset="utf-8">
+    <!-- Настройка viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Подключаем Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+	<script src="nk.js"></script>
+	<style>
+ td, th
+ {
+	border: 1px solid black;
+	padding: .3em;
+ }
+ li
+ {
+	margin-bottom: 5px;
+	line-height: 20px;
+
+ }
+ p
+ {
+ margin: 15px;
+ }
+ table
+ {
+	border-collapse: collapse;
+
+ }
+
+
+.discount{
+font-size=120%;
+font-weight: bold;
+}
+
+#sum_contract
+{ margin-top:0;}
+#skidki
+{ margin-bottom:5px;
+	margin-top:5px;}
+
+
+
+.bannerB {
+
+	color:black;
+	background-color: #FFFFE0;
+	font-size: 65%;
+	border: 1px solid black;
+	padding: 3px 6px;
+	border-radius: 5px;
+	box-shadow: 5px -5px 15px -7px #000000;
+	position: relative;
+	top: 10px;
+	left: -5px;
+	z-index:9999;
+
+}
+
+.bannerR
+{
+	color:white;
+	background-color: #FF0000;
+	padding: 3px 6px;
+	border-radius: 5px;
+	box-shadow: 5px -5px 15px -7px #000000;"
+}
+
+.note
+{
+	position: absolute;
+	z-index:10000;
+	color:black;
+	background-color: #FFFFE0;
+	font-size: 65%;
+	border: 1px solid black;
+	padding: 3px 6px;
+	border-radius: 5px;
+	box-shadow: 5px -5px 15px -7px #000000;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+. input_count
+{
+
+
+}type="text" value=" " size="2" title="Введите необходимое Вам количество экз."
+
+a.bot8 {
+  background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
+        border-radius: 4px;
+    color: #555555;
+    display: inline-block;
+        width:120px;
+        margin: 10px auto;
+    font-size: 14px;
+        text-align:center;
+    height: 20px;
+    line-height: 20px;
+    padding: 4px 6px;
+    vertical-align: middle;
+    text-decoration:none;
+
+}
+a.bot8:hover, a.bot8:focus {
+   border-color: rgba(82, 168, 236, 1);
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 1);
+   outline: 0 none;
+}
+
+
+
+input {
+   background: #ffffff;
+   outline: none;
+   border: none;
+   width: 25px;
+   height: 25px;
+   text-align:center;
+   font-size:100%;
+}
+
+
+input:focus {
+  color: #000000;
+  border: 1px solid #52a8ec;
+}
+
+	thead tr
+		{
+		background-color: #1E90FF !important;
+		color: white;
+		}
+
+	tbody tr:hover
+		{
+			background-color: #008B8B;
+			color: #FFFFFF;
+		}
+
+	tr:nth-child(2n)
+		{
+			background-color: #DCDCDC;
+		}
+
+	tr:nth-child(2n+1)
+		{
+			background-color: #FFFFFF;
+		}
+	tr:nth-child(2n+1) input
+		{
+			border: 1px solid #C0C0C0;
+
+		}
+
+
+
+	</style>
+
+
+
+</head>
+
+<body style="background-color: #F7F7F7; margin: 0px 0px 0px 0px; min-width: 100%; padding: 0px 0px 0px 0px;>
+  <table border="0" cellpadding="0" cellspacing="0" style="color: #333333; font-family: Arial, Helvetica, sans-serif; line-height: 22px;" width="100%">
+     <tr>
+	  <table align="center" border="1" cellpadding="0" cellspacing="0"  style=" text-align: center; color: #333333; font-family: sans-serif; max-width: 800px; width: 100%; font-size:100%;">
+		<thead>
+		  <tr>
+			<td width="5%" >№ <br>п/п</td>
+			<td width="45%">Наименование товара</td>
+			<td width="10%">Цена,<br> руб. </td>
+			<td width="10%">Кол-во, <br>шт.</td>
+			<td width="10%">Ставка <br>НДС, %</td>
+			<td width="10%" id="is_sum_disc"> Сумма <br>НДС, руб.</td>
+			<td width="10%">Сумма к<br> оплате, руб.</td>
+		  </tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td width="5%">1.</td>
+			<td width="45%" style="text-align: left; padding-left: 1em;">Налоговый кодекс Республики <br>Беларусь (2019)</td>
+			<td width="10%">97.60 </td>
+			<td width="10%"><input id="input_count" type="text" value="  " size="2" title="Введите необходимое Вам количество экз." onchange="sum_calculate(this.value, )"></td>
+
+			<td width="10%">Без НДС</td>
+			<td width="10%" id="sum_disc">&mdash;</td>
+			<td width="10%"><span id="sum_k_opl">&mdash;</span></td>
+		</tr>
+
+		</tr>
+			<tr class="active">
+			<td  width="5%">2.</td>
+			<td width="45%" style="text-align: left; padding-left: 1em;">Налоговый кодекс Республики <br>Беларусь (2019)</td>
+			<td width="10%">97.60 </td>
+			<td width="10%"><input id="input_count" type="text" value=" " size="2" title="Введите необходимое Вам количество экз." onchange="sum_calculate(this.value)"></td>
+
+			<td width="10%">Без НДС</td>
+			<td width="10%" id="sum_disc">&mdash;</td>
+			<td width="10%"><span id="sum_k_opl">&mdash;</span></td>
+
+		</tr>
+				</tr>
+			<tr class="active">
+			<td  width="5%">3.</td>
+			<td width="45%" style="text-align: left; padding-left: 1em;">Налоговый кодекс Республики <br>Беларусь (2019)</td>
+			<td width="10%">97.60 </td>
+			<td width="10%"><input class="input_count" id="input_count" type="text" value=" " size="2" title="Введите необходимое Вам количество экз." onchange="sum_calculate(this.value)"></td>
+
+			<td width="10%">Без НДС</td>
+			<td width="10%" id="sum_disc">&mdash;</td>
+			<td width="10%"><span id="sum_k_opl">&mdash;</span></td>
+
+		</tr>
+				</tr>
+			<tr class="active">
+			<td  width="5%">4.</td>
+			<td width="45%" style="text-align: left; padding-left: 1em;">Налоговый кодекс Республики <br>Беларусь (2019)</td>
+			<td width="10%">97.60 </td>
+			<td width="10%"><input id="input_count" type="text" value=" " size="2" title="Введите необходимое Вам количество экз." onchange="sum_calculate(this.value)"></td>
+
+			<td width="10%">Без НДС</td>
+			<td width="10%" id="sum_disc">&mdash;</td>
+			<td width="10%"><span id="sum_k_opl">&mdash;</span></td>
+
+		</tr>
+
+
+
+		</tbody>
+
+
+	</table>
+  </tr>
+ </table>
+<br><br>
+<a href="/home">Домой</a>
+
+
+</body>
+
+</html>
